@@ -1,0 +1,98 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Configure (MinGW)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build",
+                "-G",
+                "MinGW Makefiles",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build All",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--parallel"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": "CMake: Configure (MinGW)"
+        },
+        {
+            "label": "CMake: Clean",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--target",
+                "clean"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Configure STM32 (ARM)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S",
+                "07_stm32_specific",
+                "-B",
+                "build_stm32",
+                "-DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build STM32",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build_stm32",
+                "--parallel"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": "CMake: Configure STM32 (ARM)"
+        }
+    ]
+}

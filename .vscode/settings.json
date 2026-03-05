@@ -1,0 +1,15 @@
+{
+    "cmake.configureOnOpen": false,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.generator": "MinGW Makefiles",
+    "editor.formatOnSave": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.h": "c",
+        "*.hpp": "cpp"
+    },
+    "files.exclude": {
+        "build/**": true,
+        "build_stm32/**": true
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "PC (MinGW)",
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/common/include"
+            ]
+        },
+        {
+            "name": "STM32 (ARM GCC)",
+            "compilerPath": "arm-none-eabi-gcc",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-arm",
+            "defines": [
+                "STM32F411xE",
+                "ARM_MATH_CM4",
+                "USE_HAL_DRIVER"
+            ],
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/common/include"
+            ]
+        }
+    ],
+    "version": 4
+}
