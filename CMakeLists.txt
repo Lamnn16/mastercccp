@@ -41,5 +41,7 @@ add_subdirectory(04_embedded_cpp)
 add_subdirectory(05_protocols)
 add_subdirectory(06_rtos_concepts)
 add_subdirectory(08_projects)
+add_subdirectory(09_unit_testing)
+add_subdirectory(10_c_vs_cpp_embedded)
 
 # 07_stm32_specific uses a separate ARM toolchain — see cmake/arm-none-eabi.cmake
